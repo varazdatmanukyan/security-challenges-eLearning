@@ -27,6 +27,11 @@ export class InstructorClassesComponent implements OnInit {
     this.classService.getInstructorClasses()
       .then(result => {
         this.classes = result;
+        setTimeout(() => {
+            for (let i = 0, len =  document.querySelectorAll('.titles').length; i < len; i++) {
+              document.querySelectorAll('.titles')[i].innerHTML = this.classes[i].title;
+            }
+        });
       });
   }
 }
