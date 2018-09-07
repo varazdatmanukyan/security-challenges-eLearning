@@ -62,9 +62,7 @@
            class="form-control">
     <div *ngIf="myForm.controls.confirmPassword.touched" class="validation-error">
       <p *ngIf="myForm.controls.confirmPassword.errors?.required"> Confirm Password is required. </p>
-      <p *ngIf="!myForm.controls.confirmPassword.errors?.required && myForm.controls.confirmPassword.errors?.matchErr">
-        Passwords do not match.
-      </p>
+      <p *ngIf="!myForm.controls.confirmPassword.errors?.required && myForm.controls.confirmPassword.errors?.matchErr"> Passwords do not match. </p>
   </div>
   </div>
 
