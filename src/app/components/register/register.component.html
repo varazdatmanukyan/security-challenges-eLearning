@@ -47,8 +47,6 @@
            class="form-control">
     <div *ngIf="myForm.controls.password.touched" class="validation-error">
       <p *ngIf="myForm.controls.password.errors?.required"> Password is required. </p>
-      <p *ngIf="myForm.controls.password.errors?.minlength"> Password should contain at least {{ myForm.controls.password.errors?.minlength.requiredLength }} characters. </p>
-      <p *ngIf="myForm.controls.password.errors?.pattern"> Password must contain at least one uppercase letter and a number. </p>
   </div>
   </div>
 
