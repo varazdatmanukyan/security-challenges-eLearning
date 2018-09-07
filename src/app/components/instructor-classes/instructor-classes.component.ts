@@ -4,7 +4,6 @@ import {Component, OnInit} from '@angular/core';
 import { Clazz } from '../../interfaces/class.interface';
 import { User } from '../../interfaces/user.interface';
 import { UserService } from '../../services/user/user.service';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-instructor-classes',
