@@ -34,12 +34,19 @@ export class RegisterComponent implements OnInit {
 
 
     this.myForm = new FormGroup({
-      firstname: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+')]),
-      lastname: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+')]),
-      username: new FormControl('', [Validators.required, unique.bind(null, this, 'username')]),
-      email: new FormControl('', [Validators.required, Validators.email, unique.bind(null, this, 'email')]),
-      password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/)]),
-      confirmPassword: new FormControl('', [Validators.required, match.bind(null, this, 'password', 'confirmPassword')]),
+      firstname: new FormControl('', [Validators.required,
+          Validators.pattern('^[a-zA-Z]+')]),
+      lastname: new FormControl('', [Validators.required,
+          Validators.pattern('^[a-zA-Z]+')]),
+      username: new FormControl('', [Validators.required,
+          unique.bind(null, this, 'username')]),
+      email: new FormControl('', [Validators.required,
+          Validators.email, unique.bind(null, this, 'email')]),
+      password: new FormControl('', [Validators.required,
+          Validators.minLength(8),
+          Validators.pattern(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/)]),
+      confirmPassword: new FormControl('', [Validators.required,
+          match.bind(null, this, 'password', 'confirmPassword')]),
       role: new FormControl('S', Validators.required)
     });
   }
