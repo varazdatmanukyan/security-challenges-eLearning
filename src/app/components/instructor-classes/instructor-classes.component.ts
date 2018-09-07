@@ -4,7 +4,6 @@ import {Component, OnInit} from '@angular/core';
 import { Clazz } from '../../interfaces/class.interface';
 import { User } from '../../interfaces/user.interface';
 import { UserService } from '../../services/user/user.service';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-instructor-classes',
@@ -15,7 +14,7 @@ export class InstructorClassesComponent implements OnInit {
 
   public classes: Clazz;
   public authUser: User;
-  constructor(private classService: ClassService, private userService: UserService, private domSanitizer:  DomSanitizer,
+  constructor(private classService: ClassService, private userService: UserService,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {

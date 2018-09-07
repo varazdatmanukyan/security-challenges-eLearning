@@ -43,8 +43,7 @@ export class RegisterComponent implements OnInit {
       email: new FormControl('', [Validators.required,
           Validators.email, unique.bind(null, this, 'email')]),
       password: new FormControl('', [Validators.required,
-          Validators.minLength(8),
-          Validators.pattern(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/)]),
+          Validators.minLength(8),]),
       confirmPassword: new FormControl('', [Validators.required,
           match.bind(null, this, 'password', 'confirmPassword')]),
       role: new FormControl('S', Validators.required)

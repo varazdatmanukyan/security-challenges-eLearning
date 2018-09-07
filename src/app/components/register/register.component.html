@@ -50,9 +50,6 @@
       <p *ngIf="myForm.controls.password.errors?.minlength">
         Password should contain at least {{ myForm.controls.password.errors?.minlength.requiredLength }} characters.
       </p>
-      <p *ngIf="myForm.controls.password.errors?.pattern">
-        Password must contain at least one uppercase letter and a number.
-      </p>
   </div>
   </div>
 
