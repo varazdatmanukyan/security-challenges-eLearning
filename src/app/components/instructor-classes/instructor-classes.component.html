@@ -15,7 +15,7 @@
             <tbody>
               <tr *ngFor="let class of classes; let i = index">
                 <th scope="row">{{i + 1}}</th>
-                <td [innerHTML]="domSanitizer.bypassSecurityTrustHtml(class.title)"></td>
+                <td [innerText]="domSanitizer.bypassSecurityTrustHtml(class.title)"></td>
                 <td>{{class.description}}</td>
                 <td><a [routerLink] = "'/classes/' + class.id + '/lessons'">View Lessons</a></td>
                 <td><a [routerLink] = "class.id + '/lessons/new'">Add Lesson</a></td>
