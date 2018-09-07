@@ -15,8 +15,9 @@ export class InstructorClassesComponent implements OnInit {
 
   public classes: Clazz;
   public authUser: User;
-  constructor(private classService: ClassService, private userService: UserService, private domSanitizer:  DomSanitizer,
-    private activatedRoute: ActivatedRoute) { }
+  constructor(private classService: ClassService,
+              private userService: UserService,
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.authUser = this.activatedRoute.snapshot.data.authUser;
