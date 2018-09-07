@@ -47,8 +47,12 @@
            class="form-control">
     <div *ngIf="myForm.controls.password.touched" class="validation-error">
       <p *ngIf="myForm.controls.password.errors?.required"> Password is required. </p>
-      <p *ngIf="myForm.controls.password.errors?.minlength"> Password should contain at least {{ myForm.controls.password.errors?.minlength.requiredLength }} characters. </p>
-      <p *ngIf="myForm.controls.password.errors?.pattern"> Password must contain at least one uppercase letter and a number. </p>
+      <p *ngIf="myForm.controls.password.errors?.minlength">
+        Password should contain at least {{ myForm.controls.password.errors?.minlength.requiredLength }} characters.
+      </p>
+      <p *ngIf="myForm.controls.password.errors?.pattern">
+        Password must contain at least one uppercase letter and a number.
+      </p>
   </div>
   </div>
 
@@ -58,7 +62,9 @@
            class="form-control">
     <div *ngIf="myForm.controls.confirmPassword.touched" class="validation-error">
       <p *ngIf="myForm.controls.confirmPassword.errors?.required"> Confirm Password is required. </p>
-      <p *ngIf="!myForm.controls.confirmPassword.errors?.required && myForm.controls.confirmPassword.errors?.matchErr"> Passwords do not match. </p>
+      <p *ngIf="!myForm.controls.confirmPassword.errors?.required && myForm.controls.confirmPassword.errors?.matchErr">
+        Passwords do not match.
+      </p>
   </div>
   </div>
 
