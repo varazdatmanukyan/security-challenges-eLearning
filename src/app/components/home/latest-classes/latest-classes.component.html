@@ -1,0 +1,13 @@
+<div class="row">
+    <h1>Latest classes</h1>
+    <div *ngFor="let class of classes" class="col-sm-4">
+        <div class="card app-class">
+            <div class="card-block">
+              <h3 class="card-title">{{class.title}}</h3>
+              <p class="card-text">{{class.description}}</p>
+              <p><b>Instructor: </b>{{class.Instructor.firstname}} {{class.Instructor.lastname}}</p>
+              <a [routerLink]="['/class', class.id]"><button class="btn">Class details</button></a>
+            </div>
+          </div>
+    </div>
+</div>

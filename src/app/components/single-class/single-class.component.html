@@ -1,0 +1,30 @@
+<div class="container-fluid app-container">
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="jumbotron text-center">
+                <div>
+                  <h3>{{class?.title}}</h3>
+                  <p><b>Instructor: </b>{{class?.Instructor?.firstname}} {{class?.Instructor?.lastname}}</p>
+                  <p>{{class?.description}}</p>
+                  <h4 *ngIf="class?.Lessons?.length">Lessons</h4>
+                  <ul class="list-group">
+                      <li class="list-group-item"
+                        *ngFor="let lesson of class?.Lessons; let i = index">
+                        {{lesson.number}}. {{lesson.title}}
+                      </li>
+                  </ul>
+                  <p *ngIf="!authUser">You must be logged in as student to register for this class</p>
+                  <button class="btn btn-info" *ngIf="authUser && authUser.role === 'S' && !class?.isRegistered" (click)="registerForClass()">
+                      Register For This Class
+                  </button>
+                  <h5 *ngIf="class?.isRegistered">You are registered for this class</h5>
+                </div>
+              </div>
+
+        </div>
+        <div class="col-sm-3">
+            <app-login *ngIf="!authUser"></app-login>
+            <app-user-dashboard *ngIf="authUser" [authUser]="authUser"></app-user-dashboard>
+        </div>
+    </div>
+</div>

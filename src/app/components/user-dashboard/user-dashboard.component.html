@@ -1,0 +1,8 @@
+<div *ngIf="authUser">
+    <h5>Welcome Back {{authUser?.username}}</h5>
+    <ul class="list-group">
+        <li class="list-group-item app-link" [routerLink]="'/' + Role[authUser.role] + '/classes'"> My Classes</li>
+        <li *ngIf="authUser.role === 'I'" class="list-group-item app-link" [routerLink]="'/' + Role[authUser.role] + '/classes/new'"> Add Class</li>
+        <li class="list-group-item app-link" (click)="logout()">Logout</li>
+    </ul>
+</div>

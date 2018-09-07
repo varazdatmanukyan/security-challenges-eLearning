@@ -1,0 +1,21 @@
+<div class="container-fluid app-container">
+    <div class="row">
+        <div class="col-sm-9">
+            <h1>Classes</h1>
+            <div *ngFor="let class of classes" class="col-sm-12">
+                <div class="card app-class">
+                    <div class="card-block">
+                      <h3 class="card-title">{{class.title}}</h3>
+                      <p class="card-text">{{class.description}}</p>
+                      <p><b>Instructor: </b>{{class.Instructor.firstname}} {{class.Instructor.lastname}}</p>
+                      <a [routerLink]="['/class', class.id]"><button class="btn btn-block">Class details</button></a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <app-login *ngIf="!authUser"></app-login>
+            <app-user-dashboard *ngIf="authUser" [authUser]="authUser"></app-user-dashboard>
+        </div>
+    </div>
+</div>

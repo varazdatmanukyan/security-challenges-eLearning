@@ -1,0 +1,13 @@
+<div class="container-fluid app-container">
+  <div class="row">
+      <div class="col-sm-10 offset-sm-1">
+          <div class="jumbotron" *ngFor="let lesson of lessons">
+              <div>
+                <h5 class="text-center">{{lesson?.number}} {{lesson?.title}}</h5>
+                <p>{{lesson?.body}}</p>
+              </div>
+            </div>
+
+      </div>
+  </div>
+</div>

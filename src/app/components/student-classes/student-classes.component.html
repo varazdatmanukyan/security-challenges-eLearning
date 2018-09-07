@@ -1,0 +1,30 @@
+<div class="container-fluid app-container">
+  <div class="row">
+      <div class="col-sm-9">
+          <h1>{{authUser?.username}}'s Classes</h1>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Instructor</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let class of classes; let i = index">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{class.title}}</td>
+                <td>{{class.Instructor.firstname}} {{class.Instructor.lastname}}</td>
+                <td>{{class.description}}</td>
+                <td><a [routerLink] = "'/classes/' + class.id + '/lessons'">View Lessons</a></td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <div class="col-sm-3">
+          <app-login *ngIf="!authUser"></app-login>
+          <app-user-dashboard *ngIf="authUser" [authUser]="authUser"></app-user-dashboard>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.app-container {
+  padding: 30px 150px
+}
+
+.btn {
+  cursor: pointer;
+}
+.app-class {
+  padding: 10px;
+}
+
+
+.text-center {
+  align-items: center;
+}
+
+.m-top50 {
+  margin-top: 50px
+}

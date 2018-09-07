@@ -1,0 +1,75 @@
+<form novalidate [formGroup]="myForm" class="col-sm-6 offset-sm-3">
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" formControlName="firstname"
+             class="form-control">
+      <div *ngIf="myForm.controls.firstname.touched" class="validation-error">
+        <p *ngIf="myForm.controls.firstname.errors?.required"> First Name is required. </p>
+        <p *ngIf="myForm.controls.firstname.errors?.pattern"> First Name must contain only letters. </p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" formControlName="lastname"
+             class="form-control">
+      <div *ngIf="myForm.controls.lastname.touched" class="validation-error">
+        <p *ngIf="myForm.controls.lastname.errors?.required"> Last Name is required. </p>
+        <p *ngIf="myForm.controls.lastname.errors?.pattern"> Last Name must contain only letters. </p>
+      </div>
+
+    </div>
+
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" formControlName="username"
+           class="form-control">
+    <div *ngIf="myForm.controls.username.touched" class="validation-error">
+      <p *ngIf="myForm.controls.username.errors?.required"> Username is required. </p>
+      <p *ngIf="!myForm.controls.username.errors?.required && myForm.controls.username.errors?.uniqueErr"> Username is already taken. </p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" formControlName="email"
+           class="form-control">
+      <div *ngIf="myForm.controls.email.touched" class="validation-error">
+        <p *ngIf="myForm.controls.email.errors?.required"> Email is required. </p>
+        <p *ngIf="!myForm.controls.email.errors?.required && myForm.controls.email.errors?.email"> Not a valid email. </p>
+        <p *ngIf="!myForm.controls.email.errors?.required && myForm.controls.email.errors?.uniqueErr"> Email is already taken. </p>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" formControlName="password"
+           class="form-control">
+    <div *ngIf="myForm.controls.password.touched" class="validation-error">
+      <p *ngIf="myForm.controls.password.errors?.required"> Password is required. </p>
+      <p *ngIf="myForm.controls.password.errors?.minlength"> Password should contain at least {{ myForm.controls.password.errors?.minlength.requiredLength }} characters. </p>
+      <p *ngIf="myForm.controls.password.errors?.pattern"> Password must contain at least one uppercase letter and a number. </p>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <label>Confirm Password</label>
+    <input type="password" formControlName="confirmPassword"
+           class="form-control">
+    <div *ngIf="myForm.controls.confirmPassword.touched" class="validation-error">
+      <p *ngIf="myForm.controls.confirmPassword.errors?.required"> Confirm Password is required. </p>
+      <p *ngIf="!myForm.controls.confirmPassword.errors?.required && myForm.controls.confirmPassword.errors?.matchErr"> Passwords do not match. </p>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <label>Role</label>
+    <select class="form-control" formControlName="role">
+      <option value="S">Student</option>
+      <option value="I">Instructor</option>
+    </select>
+  </div>
+  <div class="form-group">
+      <button (click)="onSubmit()" class="btn btn-info btn-block" >Register</button>
+    </div>
+</form>
