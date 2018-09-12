@@ -28,7 +28,7 @@ class Application {
     this.app.use(koaMorgan('combined', { stream: process.stdout } ));
     this.app.use(bodyParser());
     this.app.use(cors({
-      origin: "https://localhost:4200",
+      origin: "http://localhost:4200",
       credentials: true,
       allowMethods: ['GET', 'POST']
     }));
