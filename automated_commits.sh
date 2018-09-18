@@ -1,12 +1,20 @@
 #!/bin/bash
 BRANCHES=(
-master_branch
-develop_branch
-testing_branch
+  "insufficiently_proteced_credentials"
+  "insufficiently_proteced_credentials(2)"
+  "insufficiently_proteced_credentials(3)"
+  "master"
+  "unprotected_transport_of_credentials"
+  "unprotected_transport_of_credentials(2)"
+  "unprotected_transport_of_credentials(2)-2"
+  "unprotected_transport_of_credentials-2"
+  "xss_stored"
+  "xss_stored(2)"
+  "xss_stored(3)"
+
 )
 ORIGINALBRANCH=`git status | head -n1 | cut -c13-`
-git commit -m $1
-CHERRYCOMMIT=`git log -n1 | head -n1 | cut -c8-`
+CHERRYCOMMIT=$1
 for BRANCH in "${BRANCHES[@]}";
 do
     git stash;
