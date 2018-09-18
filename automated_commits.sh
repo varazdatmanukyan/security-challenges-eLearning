@@ -11,14 +11,11 @@ BRANCHES=(
   "xss_stored"
   "xss_stored(2)"
   "xss_stored(3)"
-
 )
-ORIGINALBRANCH=`git status | head -n1 | cut -c13-`
+
 CHERRYCOMMIT=$1
 for BRANCH in "${BRANCHES[@]}";
 do
-    git stash;
     git checkout $BRANCH;
     git cherry-pick $CHERRYCOMMIT;
-    git stash pop;
 done
