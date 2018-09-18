@@ -1,8 +1,12 @@
 #!/bin/bash
 BRANCHES=(
-master_branch
-develop_branch
-testing_branch
+"master_branch"
+"insufficiently_proteced_credentials"
+"insufficiently_proteced_credentials(2)"
+"insufficiently_proteced_credentials(3)"
+"xss_stored"
+"xss_stored(2)"
+"xss_stored(3)"
 )
 ORIGINALBRANCH=`git status | head -n1 | cut -c13-`
 git commit -m $1
